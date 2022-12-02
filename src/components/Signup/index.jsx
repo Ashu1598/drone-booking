@@ -10,7 +10,7 @@ const Signup = () => {
 
   const handleClick = () => {
     axios
-      .post(`http://localhost:8000/mobile`, { number })
+      .post(`http://localhost:8001/mobile`, { number })
       .then((res) => {
         console.log("response", res)
         console.log(res.status)
@@ -24,7 +24,7 @@ const Signup = () => {
 
   const handleOtp = () => {
     axios
-      .post("http://localhost:8000/otp", { otp, number })
+      .post("http://localhost:8001/otp", { otp, number })
       .then((reso) => {
         console.log("response of", reso)
 
