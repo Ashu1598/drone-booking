@@ -9,6 +9,7 @@ const Signup = () => {
   const [showMessage, setShowMessage] = useState(false)
 
   const handleClick = () => {
+    console.log(number)
     axios
       .post(`http://localhost:8001/mobile`, { number })
       .then((res) => {
@@ -19,7 +20,10 @@ const Signup = () => {
           setShowOtpForm(true)
         }
       })
-      .catch((err) => {})
+      //.catch((err) => {})
+      .catch((err) => {
+        console.error(err.response.data)
+      })
   }
 
   const handleOtp = () => {

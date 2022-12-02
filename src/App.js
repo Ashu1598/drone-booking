@@ -1,7 +1,7 @@
 import "./App.css"
 import { Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layouts"
-import Home from "./components/Home"
+//import Home from "./components/Home"
 import Signup from "./components/Signup"
 
 function App() {
