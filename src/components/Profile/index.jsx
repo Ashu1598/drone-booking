@@ -11,9 +11,14 @@ const Profile = () => {
     <div className='wrapper'>
       <div className='container mt-5  d-flex flex-column justify-content-center'>
         <div className='row d-flex justify-content-center align-items-center g-4'>
-          <div className='col-lg-12'>
-            <div className='card py-4 px-4'>
-              <h2>Profile</h2>
+          <div className='col-lg-8 '>
+            <div className='card shadow pt-2 pb-4'>
+              <div
+                className='card-header text-center mb-3'
+                style={{ background: 0 }}
+              >
+                <h2>Profile</h2>
+              </div>
               <div className='card-body'>
                 <form className='row g-3'>
                   <div className='col-md-4'>
@@ -181,6 +186,18 @@ const Profile = () => {
                   ) : (
                     <></>
                   )}
+
+                  <div className='mt-5 mb-3 text-end'>
+                    <button
+                      className='btn text-white'
+                      style={{
+                        backgroundColor: "#EE6F1B",
+                        borderColor: "#EE6F1B",
+                      }}
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>

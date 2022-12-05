@@ -1,15 +1,8 @@
-body{
-    background-color:#eee;
+body {
+    background-color: #eee !important;
+    .card {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+    }
 }
-
-.card{
-   
-    padding:10px;
-    border:none;
-    border-radius:20px;
-}
-
-
-
-
-

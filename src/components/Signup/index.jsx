@@ -1,12 +1,16 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import "./signup.scss"
 import axios from "axios"
+import logo from "../../assets/logo-black/M-Drone.png"
 
 const Signup = () => {
+  const Navigate = useNavigate()
   const [number, setNumber] = useState("")
   const [showOtpForm, setShowOtpForm] = useState(false)
   const [otp, setOtp] = useState()
   const [showMessage, setShowMessage] = useState(false)
+  const [btndisabled, setBtnDisabled] = useState(false)
 
   const handleClick = () => {
     console.log(number)
@@ -34,6 +38,11 @@ const Signup = () => {
 
         if (reso.status === 200 && reso.data === "approved") {
           setShowMessage(true)
+          setBtnDisabled(true)
+          setTimeout(() => {
+            setShowMessage(false)
+            Navigate("/profile")
+          }, 3000)
         }
       })
       .catch((err) => {
@@ -45,13 +54,15 @@ const Signup = () => {
   return (
     <div className='container vh-100  d-flex flex-column justify-content-center'>
       <div className='row d-flex justify-content-center align-items-center g-4'>
-        <div className='col-lg-4'>
+        <div className='col-lg-6 col-md-8 col-sm-10 col-12'>
           <div className='card py-4 px-4'>
             <div className='card-body'>
               {!showOtpForm ? (
                 <form className='mt-4'>
                   <div className='text-center mb-4'>
+                    <img src={logo} alt='' className='img-fluid mb-5' />
                     <h2>SignUp</h2>
+                    <p>You'll receive a 6 digit code to verify next</p>
                   </div>
                   <div className='mb-3'>
                     <input
@@ -61,6 +72,7 @@ const Signup = () => {
                       placeholder='Enter your mobile number'
                       onChange={(e) => setNumber(e.target.value)}
                       value={number}
+                      name='mobileNumber'
                     />
                   </div>
 
@@ -74,20 +86,22 @@ const Signup = () => {
                         borderColor: "#EE6F1B",
                       }}
                     >
-                      Submit
+                      Continue
                     </button>
                   </div>
                 </form>
               ) : (
                 <form className='mt-4'>
                   <div className='text-center mb-4'>
-                    <p> Enter Otp recieved on your {number}</p>
+                    <h2>Verify Mobile Number</h2>
+                    <p> Code is sent to {number}</p>
                   </div>
                   <div className='mb-3'>
                     <input
                       type='number'
                       className='form-control'
                       id='otp'
+                      name='otp'
                       placeholder='Enter Otp'
                       onChange={(e) => setOtp(e.target.value)}
                     />
@@ -97,18 +111,23 @@ const Signup = () => {
                     <button
                       type='button'
                       onClick={handleOtp}
-                      className='btn text-white btn-lg'
+                      className='btn text-white'
                       style={{
                         backgroundColor: "#EE6F1B",
                         borderColor: "#EE6F1B",
                       }}
+                      disabled={btndisabled}
                     >
-                      Verify Otp
+                      Verify
                     </button>
-                    <p className={`mt-3 ${showMessage ? "d-block" : "d-none"}`}>
-                      Otp is Verified
-                    </p>
                   </div>
+                  <p
+                    className={`mt-3 mb-0 fw-bold ${
+                      showMessage ? "d-block" : "d-none"
+                    }`}
+                  >
+                    Otp is Verified
+                  </p>
                 </form>
               )}
             </div>
