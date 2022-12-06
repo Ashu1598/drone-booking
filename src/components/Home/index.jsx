@@ -58,17 +58,25 @@ const Index = () => {
                 <div className='container px-5'>
                   <div className='row gx-5 align-items-center'>
                     <div className='col-lg-6'>
-                      <h1 className='hero-title text-white'>M-Drone</h1>
-                      <p className='hero-text mb-5'>
-                        Welcome to M-Drone, you can avail the drone services
-                        here!
-                      </p>
-                      <a
-                        className='btn btn-light fw-500 me-2 btn-lg'
-                        href='/signup'
-                      >
-                        Get Started
-                      </a>
+                      <div className='w-100'>
+                        <h1 className='hero-title text-white'>
+                          The Future Is Here
+                          <br /> M-Drone
+                        </h1>
+                        <p className='hero-text mt-3 mb-4'>
+                          We use the best technology with the innovation,
+                          <br /> which is providing the indigenous solutions{" "}
+                          <br /> to the technology hindrance of human lives.{" "}
+                          <br /> We manufacture customized drones for the
+                          <br /> industrial sectors and agriculture.
+                        </p>
+                        <a
+                          className='btn btn-light fw-500 me-2 btn-lg'
+                          href='/signup'
+                        >
+                          Get Started
+                        </a>
+                      </div>
                     </div>
                     <div className='col-lg-6 d-none d-lg-block'>
                       <img className='img-fluid' src={heroImg} alt='' />
@@ -94,31 +102,22 @@ const Index = () => {
                     <div className='icon-stack icon-stack-xl bg-gradient text-white mb-4'>
                       <i className='bi bi-layers-fill'></i>
                     </div>
-                    <h3>Built for developers</h3>
-                    <p className='mb-0'>
-                      Our customizable, block-based build system makes creating
-                      your next project fast and easy!
-                    </p>
+                    <h3>10x</h3>
+                    <p className='mb-0'>Faster Data Acquisition</p>
                   </div>
                   <div className='col-lg-4 col-md-6 col-sm-6 col-12 mb-5 mb-lg-0'>
                     <div className='icon-stack icon-stack-xl bg-gradient text-white mb-4'>
-                      <i className='bi bi-phone-fill'></i>
+                      <i className='bi bi-bullseye'></i>
                     </div>
-                    <h3>Modern responsive design</h3>
-                    <p className='mb-0'>
-                      Featuring carefully crafted, mobile-first components, your
-                      end product will function beautifully on any device!
-                    </p>
+                    <h3>99%</h3>
+                    <p className='mb-0'>Accurate Survey</p>
                   </div>
                   <div className='col-lg-4 col-md-6 col-sm-6 col-12'>
                     <div className='icon-stack icon-stack-xl bg-gradient text-white mb-4'>
-                      <i className='bi bi-phone-fill'></i>
+                      <i className='bi bi-trophy'></i>
                     </div>
-                    <h3>Complete documentation</h3>
-                    <p className='mb-0'>
-                      All of the layouts, page sections, components, and
-                      utilities are fully covered in this products docs.
-                    </p>
+                    <h3>Leading</h3>
+                    <p className='mb-0'>in industry</p>
                   </div>
                 </div>
               </div>
